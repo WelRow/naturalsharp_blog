@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import Logo from './Logo'
 import NavigationTabs from './NavigationTabs'
 import IMG_8407 from '../assets/IMG_8407.jpeg'
+import SUPERMANCOMIC from '../assets/supermancomic.jpg'
 
 function MonthlyPage() {
   const { year, month } = useParams()
@@ -30,6 +31,14 @@ function MonthlyPage() {
       </div>
       <NavigationTabs />
       <div className="monthly-content">
+        <div className="images-container">
+          <img src={SUPERMANCOMIC} alt="Superman Comic" className="content-image" />
+        </div>
+        <div className="post-info">
+          <div className="post-subtitle">I can't be as super as him, but can I still be the man he is. such a great movie.</div>
+          <div className="post-date">{getCurrentDate()}</div>
+          <div className="post-title">PUNK ROCKER YES I AM</div>
+        </div>
         <div className="images-container">
           <img src={IMG_8407} alt="Project Image" className="content-image" />
         </div>

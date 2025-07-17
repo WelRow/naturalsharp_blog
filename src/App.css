@@ -101,6 +101,7 @@
   align-items: center;
   max-width: 800px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .content-image {
@@ -111,7 +112,8 @@
 }
 
 .post-info {
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  margin-bottom: 40px;
   text-align: left;
   max-width: 800px;
   width: 100%;

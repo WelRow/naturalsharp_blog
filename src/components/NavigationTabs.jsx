@@ -4,7 +4,7 @@ function NavigationTabs() {
   const navigate = useNavigate()
   const currentYear = new Date().getFullYear()
   const months = [
-    { name: 'JULY', count: 1 }
+    { name: 'JULY', count: 2 }
   ]
 
   const handleMonthClick = (monthName) => {
