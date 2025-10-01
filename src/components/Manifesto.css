@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+/* Nautical Color Scheme */
+:root {
+  --nautical-deep-blue: #0A2647;
+  --nautical-ocean: #144272;
+  --nautical-teal: #205295;
+  --nautical-light-blue: #2C74B3;
+  --nautical-accent: #00D9FF;
+  --nautical-white: #F5FAFE;
+  --nautical-cream: #E8F4F8;
+  --nautical-gold: #FFB84D;
+}
+
+.manifesto-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--nautical-deep-blue) 0%, var(--nautical-ocean) 50%, var(--nautical-teal) 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated wave background */
+.manifesto-page::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23205295' fill-opacity='0.3' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  animation: waveMove 10s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes waveMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-50px); }
+}
+
+.manifesto-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--nautical-cream);
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-link:hover {
+  color: var(--nautical-white);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-5px);
+}
+
+.back-link span {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover span {
+  transform: translateX(-3px);
+}
+
+.manifesto-content {
+  padding: 3rem;
+}
+
+.manifesto-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--nautical-white);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.manifesto-body {
+  font-family: 'Raleway', sans-serif;
+  color: var(--nautical-cream);
+  line-height: 1.8;
+}
+
+.manifesto-body p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.manifesto-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .manifesto-page {
+    padding: 1rem;
+  }
+
+  .manifesto-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .manifesto-title {
+    font-size: 2.5rem;
+  }
+
+  .manifesto-body p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .manifesto-title {
+    font-size: 3rem;
+  }
+}

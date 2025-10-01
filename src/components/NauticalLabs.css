@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+/* Nautical Color Scheme */
+:root {
+  --nautical-deep-blue: #0A2647;
+  --nautical-ocean: #144272;
+  --nautical-teal: #205295;
+  --nautical-light-blue: #2C74B3;
+  --nautical-accent: #00D9FF;
+  --nautical-white: #F5FAFE;
+  --nautical-cream: #E8F4F8;
+  --nautical-gold: #FFB84D;
+}
+
+.nautical-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--nautical-deep-blue) 0%, var(--nautical-ocean) 50%, var(--nautical-teal) 100%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated wave background */
+.nautical-landing::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23205295' fill-opacity='0.3' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  animation: waveMove 10s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes waveMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-50px); }
+}
+
+.nautical-hero {
+  text-align: center;
+  max-width: 900px;
+  z-index: 2;
+  margin-bottom: 4rem;
+}
+
+.nautical-logo {
+  width: 280px;
+  height: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 10px 30px rgba(0, 217, 255, 0.3));
+  animation: floatLogo 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.nautical-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 40px rgba(0, 217, 255, 0.5));
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.nautical-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--nautical-white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.nautical-tagline {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--nautical-accent);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vision-mission-container {
+  max-width: 900px;
+  margin: 0 auto 2.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
+.vision-section,
+.mission-section {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.vision-section:hover,
+.mission-section:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--nautical-accent);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 217, 255, 0.2);
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--nautical-accent);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vision-text,
+.mission-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--nautical-cream);
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--nautical-accent), var(--nautical-light-blue));
+  color: var(--nautical-deep-blue);
+  border: 2px solid transparent;
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
+  background: linear-gradient(135deg, #00F0FF, #3D8DD9);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--nautical-white);
+  border: 2px solid var(--nautical-white);
+}
+
+.cta-secondary:hover {
+  background: var(--nautical-white);
+  color: var(--nautical-deep-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.cta-primary:active,
+.cta-secondary:active {
+  transform: translateY(-1px);
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  z-index: 2;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--nautical-accent);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.feature-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--nautical-white);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.feature-card p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--nautical-cream);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nautical-landing {
+    padding: 1.5rem;
+  }
+
+  .nautical-logo {
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .nautical-title {
+    font-size: 2.5rem;
+  }
+
+  .nautical-tagline {
+    font-size: 1.2rem;
+  }
+
+  .vision-mission-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .vision-section,
+  .mission-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .vision-text,
+  .mission-text {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .features-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nautical-title {
+    font-size: 3.2rem;
+  }
+
+  .nautical-tagline {
+    font-size: 1.3rem;
+  }
+
+  .vision-mission-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 2rem;
+  }
+
+  .features-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
